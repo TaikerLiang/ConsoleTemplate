@@ -1,0 +1,8 @@
+{
+  "models/test_uesrs.py::test_api_auth_token": true,
+  "models/test_uesrs.py::test_login_auth_token": true,
+  "models/test_uesrs.py::test_renew_last_login_date": true,
+  "models/test_uesrs.py::test_verify_password": true,
+  "test_base.py::test_dashboard": true,
+  "test_base.py::test_login": true
+}
