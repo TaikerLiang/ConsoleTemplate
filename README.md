@@ -43,16 +43,21 @@ $ pip3 install -r requirements.txt
 
 ## For Fornt-end Developer
 
-### Change type to 'testing' mode
-
-> src/\__init__.py
-
-``` 
-...
-app.config.from_object(config['testing'])
-...
-
 ```
+$ python3 run.py -f
+front-end mode
+Renew the db
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+front-end mode
+Renew the db
+ * Debugger is active!
+ * Debugger PIN: 173-105-056
+```
+
+use this command to run front-end mode, then front-end developer can develope on local site.
+it will generate flask.db on root directory. It's a sqlite db, so you can check data in db directly.
+
 
 ### run Flask service
 
