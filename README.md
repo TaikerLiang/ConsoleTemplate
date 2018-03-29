@@ -57,20 +57,6 @@ Renew the db
 
 use this command to run front-end mode, then front-end developer can develope on local site.
 it will generate flask.db on root directory. It's a sqlite db, so you can check data in db directly.
-
-
-### run Flask service
-
-```
-$ python3 run.py
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 249-982-497
-```
-
-after run Flask service you can develope at local site
-
 P.S put your code in `src/static` folder.
  
 
