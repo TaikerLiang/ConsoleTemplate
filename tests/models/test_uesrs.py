@@ -3,7 +3,6 @@ import time
 from src import app, db
 from src.models import users
 
-
 @pytest.fixture(scope='module')
 def user():
     user = users.User('taiker', 'taiker@email.com', 'taiker@password')

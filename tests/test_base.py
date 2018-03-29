@@ -15,7 +15,7 @@ def get_header(u):
 
 
 def test_login(app_client, user):
-
+    user = db.session.merge(user)
     data = {
         'email': 'paul@email.com',
         'password': 'paul@password',

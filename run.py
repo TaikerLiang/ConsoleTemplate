@@ -1,7 +1,15 @@
+from src.models import users
 from src import app, db
 from flask import url_for
 import urllib
 import click
+
+@app.cli.command()
+def new_user():
+    user = users.User('paul', 'paul@email.com', 'paul@password')
+    db.session.add(user)
+    db.session.commit()
+
 
 @app.cli.command()
 def initdb():
