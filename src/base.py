@@ -9,7 +9,7 @@ from pprint import pprint
 
 
 @app.route("/", methods=['GET'])
-def login():
+def hello():
     return jsonify({'err': 0, 'err_msg': 'Welcome to Flask!'})
 
 @app.route("/login", methods=['POST'])
