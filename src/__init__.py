@@ -7,3 +7,4 @@ app.config.from_object(config['development'])
 db = SQLAlchemy(app)
 
 from src import base
+from src import user
