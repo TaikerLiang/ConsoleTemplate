@@ -21,7 +21,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip3 install -r requirements.txt
+            sudo pip3 install -r requirements.txt
       - run: export FLASK_APP=run.py
-      - run: pip3 install flask-cli
+      - run: sudo pip3 install flask-cli
       - run: flask run
