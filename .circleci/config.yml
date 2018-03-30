@@ -24,5 +24,5 @@ jobs:
             . venv/bin/activate
             sudo pip3 install -r requirements.txt
       - run: export FLASK_APP=run.py
-      - run: sudo pip3 install flask-cli
+      - run: pwd
       - run: flask run
