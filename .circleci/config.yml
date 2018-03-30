@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/console_template
+    docker:
+      - image: circleci/python:3.6.4
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
+          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+      - image: circleci/postgres:9.6.2
+        environment:
+          POSTGRES_USER: taiker
+          POSTGRES_DB: basic
+
+    steps:
+        - checkout
+        - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements/dev.txt" }}
+        - run: install pip3
+          command: |
+            apt-get install python3-pip
+        - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip3 install -r requirements.txt
