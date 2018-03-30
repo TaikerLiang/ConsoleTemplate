@@ -16,4 +16,4 @@ jobs:
       - checkout
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
-      - run: apt-get install python3-pip
+      - run: sudo apt-get install python3-pip
