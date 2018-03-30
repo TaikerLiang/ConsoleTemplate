@@ -13,13 +13,13 @@ jobs:
           POSTGRES_DB: basic
 
     steps:
-        - checkout
-        - restore_cache:
+      - checkout
+      - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements/dev.txt" }}
-        - run: install pip3
+      - run: install pip3
           command: |
             apt-get install python3-pip
-        - run:
+      - run:
           command: |
             python3 -m venv venv
             . venv/bin/activate
