@@ -27,3 +27,4 @@ jobs:
           command: |
             export FLASK_APP=/home/circleci/console_template/run.py
             flask renewdb
+            pytest
