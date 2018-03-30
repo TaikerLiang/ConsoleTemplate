@@ -23,4 +23,4 @@ jobs:
             . venv/bin/activate
             pip3 install -r requirements.txt
       - run: export FLASK_APP=run.py
-      - run: flask list_routes 
+      - run: ls
