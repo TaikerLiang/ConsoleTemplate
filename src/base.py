@@ -8,6 +8,10 @@ from src.models import users
 from pprint import pprint
 
 
+@app.route("/", methods=['GET'])
+def login():
+    return jsonify({'err': 0, 'err_msg': 'Welcome to Flask!'})
+
 @app.route("/login", methods=['POST'])
 def login():
     email = request.form['email']
