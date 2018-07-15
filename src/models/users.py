@@ -1,7 +1,7 @@
 """
 .. module:: user
    :platform: Ubuntu 16.04, linux & Mac OS
-   :synopsis: 
+   :synopsis:
 
 .. moduleauthor:: Paul Liang <liang0816tw@gmail.com>
 .. date:: 2018-03-16
@@ -14,6 +14,7 @@ from sqlalchemy import Column, Integer, String, DateTime
 from pprint import pprint
 import jwt
 import datetime
+
 
 class User(db.Model):
 
@@ -58,7 +59,8 @@ class User(db.Model):
         """
         try:
             payload = {
-                'exp': datetime.datetime.now() + datetime.timedelta(hours=6, seconds=0),
+                'exp': datetime.datetime.now() +
+                datetime.timedelta(hours=6, seconds=0),
                 'iat': datetime.datetime.now(),
                 'sub': self.email
             }
@@ -75,7 +77,7 @@ class User(db.Model):
     @staticmethod
     def decode_login_auth_token(auth_token):
         """
-        Decodes the auth token for login 
+        Decodes the auth token for login
         :param auth_token:
         :return: integer|string
         """
@@ -95,7 +97,8 @@ class User(db.Model):
         """
         try:
             payload = {
-                'exp': datetime.datetime.now() + datetime.timedelta(hours=6, seconds=0),
+                'exp': datetime.datetime.now() +
+                datetime.timedelta(hours=6, seconds=0),
                 'iat': datetime.datetime.now(),
                 'sub': self.email
             }
@@ -123,7 +126,7 @@ class User(db.Model):
         except jwt.ExpiredSignatureError:
             return 'Signature expired. Please log in again.'
         except jwt.InvalidTokenError:
-            return 'Invalid token. Please log in again.'    
+            return 'Invalid token. Please log in again.'
 
     def renew_last_login_date(self):
         """
@@ -131,7 +134,7 @@ class User(db.Model):
         :return: None
         """
         self.last_login = datetime.datetime.now()
-        db.session.commit()        
+        db.session.commit()
 
     def renew_api_token(self, api_token):
         """

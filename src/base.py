@@ -12,6 +12,7 @@ from pprint import pprint
 def hello():
     return jsonify({'err': 0, 'err_msg': 'Welcome to Flask!'})
 
+
 @app.route("/login", methods=['POST'])
 def login():
     email = request.form['email']
@@ -21,15 +22,16 @@ def login():
     if login_token:
         res = users.User.decode_login_auth_token(login_token)
         if isinstance(res, str):
-            return jsonify({'err': -1, 'err_msg': 'Invalid token. Please log in again'})
+            return jsonify({'err': -1, 'err_msg': 'Invalid token.'})
         else:
             if res.email == email:
                 api_token = (user.encode_api_auth_token()).decode("utf-8")
                 res.renew_last_login_date()
                 res.renew_api_token(api_token)
-                return jsonify({'err': 0, 'err_msg': '', 'api_token': api_token})
+                return jsonify({'err': 0, 'err_msg': '',
+                                'api_token': api_token})
             else:
-                return jsonify({'err': -1, 'err_msg': 'Invalid token. Please log in again.'})
+                return jsonify({'err': -1, 'err_msg': 'Invalid token.'})
 
     user = users.User.query.filter_by(email=email).first()
 
@@ -40,9 +42,8 @@ def login():
             api_token = (user.encode_api_auth_token()).decode("utf-8")
             user.renew_last_login_date()
             user.renew_api_token(api_token)
-            res = jsonify({'err': 0, 'err_msg': '', 'login_token': login_token, 
-                'api_token': api_token})
-        
+            res = jsonify({'err': 0, 'err_msg': '', 'login_token': login_token,
+                           'api_token': api_token})
             return res
         else:
             return jsonify({'err': -1, 'err_msg': 'Invalid password.'})
