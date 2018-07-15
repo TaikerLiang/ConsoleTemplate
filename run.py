@@ -1,7 +1,7 @@
 """
-.. module:: sync
+.. module:: run
    :platform: Ubuntu 16.04 & Mac OS
-   :synopsis: Main function of this flask service
+   :synopsis: Main function of flask service
 
 .. moduleauthor:: Paul Liang <liang0816tw@gmail.com>
 .. date:: 2018-03-29
@@ -17,6 +17,7 @@ import sys
 import getopt
 import os
 
+
 @app.cli.command()
 def new_user():
     user = users.User('paul', 'paul@email.com', 'paul@password')
@@ -30,6 +31,7 @@ def initdb():
     click.echo('Init the db')
     db.create_all()
 
+
 @app.cli.command()
 def renewdb():
     """Remove the database."""
@@ -37,27 +39,30 @@ def renewdb():
     db.drop_all()
     db.create_all()
 
+
 @app.cli.command()
 def list_routes():
     """List all routes on flask service"""
     output = []
     for rule in app.url_map.iter_rules():
         methods = ','.join(rule.methods)
-        line = urllib.parse.unquote("{:50s} {:20s} {}".format(rule.endpoint, methods, rule))
+        line = urllib.parse.unquote(
+                "{:50s} {:20s} {}".format(rule.endpoint, methods, rule))
         output.append(line)
 
     for line in sorted(output):
         print(line)
 
+
 if __name__ == '__main__':
     argv = sys.argv[1:]
 
     try:
-        opts, args = getopt.getopt(argv,"hcf",["help", "ci", "front-end"])
+        opts, args = getopt.getopt(argv, "hcf", ["help", "ci", "front-end"])
     except getopt.GetoptError:
         print('please type: python3 run.py -h to help you')
         sys.exit(2)
-    
+
     for opt, arg in opts:
         if opt == '-h':
             print('usage: python3 run.py [COMMAND] ')
@@ -77,5 +82,4 @@ if __name__ == '__main__':
             user = users.User('paul', 'paul@email.com', 'paul@password')
             db.session.add(user)
             db.session.commit()
-    
     app.run()
