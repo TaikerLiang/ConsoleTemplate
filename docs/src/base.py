@@ -38,8 +38,8 @@
 
 @apiSuccess {number} err 0: successful, -1: error
 @apiSuccess {string} err_msg error message
-@apiSuccess {string} api_token for api authentication
-@apiSuccess {string} login_token for login authentication
+@apiSuccess {string} api_token for api authentication, and you should store in code, not in cookie. (Prevent CSRF Attack)
+@apiSuccess {string} login_token for login authentication, and you can store in cookie for quick login.
 
 @apiSuccessExample Success-Response:
     HTTP/1.1 200 OK

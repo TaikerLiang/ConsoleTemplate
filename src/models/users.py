@@ -1,7 +1,7 @@
 """
 .. module:: user
    :platform: Ubuntu 16.04, linux & Mac OS
-   :synopsis:
+   :synopsis: mapping to user table in database
 
 .. moduleauthor:: Paul Liang <liang0816tw@gmail.com>
 .. date:: 2018-03-16

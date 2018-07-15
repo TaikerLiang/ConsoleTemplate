@@ -41,6 +41,19 @@ $ pip3 install --upgrade pip
 $ pip3 install -r requirements.txt
 ```
 
+## Folder Explanation
+
+* src: source code
+
+NOTICE: If you add a new python file in src. Please import it in `__init__.py`.
+NOTICE: Put yor html, css, JS code in src/static folder.
+
+* docs: api document
+* tests: unit tests & api tests
+* config.py: configuration of flask, database, donaim name.
+
+NOTICE: make sure your config.py is correct before run the service.
+
 ## For Fornt-end Developer
 
 ```
@@ -55,23 +68,9 @@ Renew the db
  * Debugger PIN: 173-105-056
 ```
 
-use this command to run front-end mode, then front-end developer can develope on local site.
-it will generate flask.db on root directory. It's a sqlite db, so you can check data in db directly.
-P.S put your code in `src/static` folder.
- 
-
-## Folder Explanation
-
-* src: source code
-
-NOTICE: If you add a new python file in src. Please import it in `__init__.py`.
-NOTICE: Put yor html, css, JS code in src/static folder.
-
-* docs: api document
-* tests: unit tests & api tests
-* config.py: configuration of flask, database, donaim name.
-
-NOTICE: make sure your config.py is correct before run the service.
+Use this command to run front-end mode, then front-end developer can develope on local site.
+it will generate flask.db in root directory. It's a sqlite db, so you can check data in db directly.
+P.S put your code in `src/static` folder or just call api.
 
 ## Flask-cli
 
