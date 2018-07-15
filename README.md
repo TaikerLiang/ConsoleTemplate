@@ -125,6 +125,8 @@ I use apidoc to generate api documents and please check the reference.
 $ npm install apidoc -g
 ```
 
+you can edit the file in docs/src then use following command to generate html file for api document.
+
 ### Usage
 
 ```
@@ -151,7 +153,7 @@ $ pip3 install pytest
 ### Usage
 
 ```
-$ pytest # at root folder
+$ pytest # at root directory
 =================== test session starts ==================
 platform darwin -- Python 3.6.3, pytest-3.4.2, py-1.5.2, pluggy-0.6.0
 rootdir: /Users/taiker/workspace/new-flask-basic, inifile:
@@ -163,6 +165,19 @@ tests/models/test_uesrs.py ....                                                 
 ================ 6 passed in 5.78 seconds ================ 
 ```
 
+## CI
+
+I use circleCI to complete CI part.
+
+could check .circleci/config.yml. 
+
+### deploy
+
+pass
+
+### Reference
+
+* https://circleci.com/docs/2.0/language-python/
 
 ## License
 
