@@ -65,7 +65,7 @@
     {
         "err": -1,
         "err_msg": "Invalid token. Please log in again.",
-    }    
+    }
 
 @apiUse NotFoundError
 """

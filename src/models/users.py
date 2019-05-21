@@ -19,6 +19,8 @@ import datetime
 class User(db.Model):
 
     __tablename__ = 'users'
+
+    # table columns
     id = Column(Integer, primary_key=True)
     name = Column(String)
     email = Column(String, unique=True, index=True)

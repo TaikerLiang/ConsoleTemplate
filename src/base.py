@@ -54,4 +54,5 @@ def login():
 @app.route("/dashboard", methods=['GET'])
 @auth.requires_auth
 def dashboard():
+
     return jsonify({'err': 0, 'err_msg': '', 'res': 'This is dashboard'})
