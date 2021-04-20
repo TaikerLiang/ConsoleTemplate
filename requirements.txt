@@ -46,7 +46,7 @@ pluggy==0.6.0
 pre-commit==1.14.4
 psycopg2==2.7.3.2
 psycopg2-binary==2.7.5
-py==1.5.2
+py==1.10.0
 pyasn1==0.4.2
 pycparser==2.18
 PyJWT==1.6.0
